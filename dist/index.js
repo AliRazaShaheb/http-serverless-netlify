@@ -1,8 +1,10 @@
 const app = document.querySelector(".app");
 const btn = document.createElement("button");
 
+const baseURL = process.env.BASE_URL || "http://localhost:8888/";
+
 const fetchData1 = async () => {
-  const res = await fetch("http://localhost:8888/");
+  const res = await fetch(baseURL);
   const data = await res.json();
   const h1 = document.createElement("h1");
   h1.textContent = data.msg;
@@ -10,7 +12,7 @@ const fetchData1 = async () => {
 };
 
 const fetchData2 = async () => {
-  const res = await fetch("http://localhost:8888/ali");
+  const res = await fetch(`${baseURL}/ali`);
   const data = await res.json();
   const h1 = document.createElement("h1");
   h1.textContent = data.msg;
