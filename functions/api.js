@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 router.get("/", (req, res) => {
-  res.json({ msg: "hello world1" });
+  res.sendFile(__dirname + "/index.html");
 });
 router.get("/ali", (req, res) => {
   res.json({ msg: name });
